@@ -8,15 +8,6 @@ GIT
       case_transform (>= 0.2)
       jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
 
-GIT
-  remote: https://github.com/rgrove/sanitize.git
-  revision: c2343fd56d97276434cacf49a52d876d30eb86d7
-  specs:
-    sanitize (4.4.0)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,7 +62,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.2)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -104,8 +94,6 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    nokogumbo (1.4.10)
-      nokogiri
     pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -200,7 +188,6 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.2)
-  sanitize!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
