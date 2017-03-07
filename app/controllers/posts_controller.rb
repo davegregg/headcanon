@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(title: request_args[:title],
-                    body:  request_args[:body],
+                    body:  CGI.escapeHTML(request_args[:body]),
                     slug:  request_args[:slug])
     post.save ? render(json: post) : render(error_up(post))
   end
@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     params[:slug] ||= params[:title].truncate_words(7, separator:' ', omission:'_')
                                     .parameterize
                                     .downcase
+    params[:body] = params[:body].gsub(';','--')
     params.permit(:title,
                   :body,
                   :slug)
