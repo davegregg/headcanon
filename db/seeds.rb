@@ -1,112 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-Post.new(
-  title: 'A Historical Glance at the First Three Waves of Existentialists in Philosophy, Literature, and Psychology',
-  body: <<-BODY
-  <div class="container">
-      <div class="row">
-          <div class="col-md-4">
-              <h4>1st-Wave</h4>
-              <ul>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Soren_kierkegaard" alt="Kierkegaard">Kierkegaard</a>
-                      (1843-)
-                  </li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Fyodor_Dostoyevsky" alt="Dostoyevsky">Dostoyevsky</a>
-                      (1864-)
-                  </li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Friedrich_Nietzsche" alt="Nietzsche">Nietzsche</a>
-                      (1883-)
-                  </li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Leo_Tolstoy" alt="Tolstoy">Tolstoy</a>
-                      (1886-)
-                  </li>
-              </ul>
-          </div>
-          <div class="col-md-4">
-              <h4>2nd-Wave</h4>
-              <ul>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Lev_Shestov" alt="Shestov">Shestov</a>
-                      (1905-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Otto_Rank" alt="Rank">Rank</a>
-                      (1907-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Rilke" alt="Rilke">Rilke</a>
-                      (1910-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Kafka" alt="Kafka">Kafka</a>
-                      (1912-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Unamuno" alt="Unamuno">Unamuno</a>
-                      (1913-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Nikolai_Berdyaev" alt="Berdyaev">Berdyaev</a>
-                      (1916-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Martin_Buber" alt="Martin Buber">Buber</a>
-                      (1922-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Heidegger" alt="Heidegger">Heidegger</a>
-                      (1927-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Karl_Jaspers" alt="Karl Jaspers">Jaspers</a>
-                      (1932-)</li>
-              </ul>
-          </div>
-          <div class="col-md-4">
-              <h4>3rd-Wave (Post-War)</h4>
-              <ul>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Gabriel_Marcel" alt="Marcel">Marcel</a>
-                      (1925-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Albert_Camus" alt="Camus">Camus</a>
-                      (1937-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Sartre" alt="Sartre">Sartre</a>
-                      (1938-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Simone_Weil" alt="Weil">Weil</a>
-                      (1943-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Simone_de_Beauvoir" alt="de Beauvoir">de Beauvoir</a>
-                      (1944-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Maritain" alt="Maritain">Maritain</a>
-                      (1947-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Paul_Ricœur" alt="Paul Ricœur">Ricœur</a>
-                      (1948-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Paul_Tillich" alt="Paul Tillich">Tillich</a>
-                      (1957-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Victor_Frankl" alt="Frankl">Frankl</a>
-                      (1959-)</li>
-                  <li>
-                      <a href="https://en.wikipedia.org/wiki/Ernest_Becker" alt="Ernest Becker">Becker</a>
-                      (1962-)
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-  <div class="clear"></div>
-  BODY
-).save
+
 Post.new(
   title: 'Existentialism\'s Two Moments: Deconstruction & Construction',
   body: <<-BODY
+      <p>Existentialism's deconstruction is well-known, rising even into pop culture. But Existentialism's constructive messages remain largely ignored. Michelman, in <em>The A to Z of Existentialism,</em> gives us a foothold to get started:<p>
       <blockquote>
           "What Meursault knows [in
           <em>The Stranger</em>] is that life is absurd. The problem, which Camus attempted to address in subsequent works like 'The Rebel,' is that, if life is absurd, then it would appear that 'all is permitted': 'If one believes in nothing, if nothing makes
@@ -116,15 +15,27 @@ Post.new(
           is how the absurdist position overcomes moral relativism--the view that 'everything is permissible,' even, for example, killing another person. In writings subsequent to 'The Stranger,' such as 'The Plague' (1947) and 'The Rebel' (1951), Camus
           acknowledged the limits of the absurdist position. He reframed his philosophy of the absurd in terms of a philosophy of 'rebellion' that recognized courage, freedom, dignity, compassion, and solidarity with others as universal human values."
       </blockquote>
-      <p class="right-aligned">— Stephen Michelman from
-          <em>The A to Z of Existentialism</em>
-      </p>
   BODY
 ).save
 Post.new(
+title: 'Stoicism in Existential Therapy',
+body: <<-BODY
+<p>The term <em>existential crisis</em> can be described as the tragic loss of symbolic meaning. This isn't a new phenomenon, but our strategies have shifted. John E. Obrien make an interesting note:</p>
+<blockquote>"When the Greeks faced the same predicament, <strong>they went Stoic.</strong>"</blockquote>
+BODY
+).save
+Post.new(
+title: 'Necessity and Possibility',
+body: <<-BODY
+<p><em>Delimitation</em> and <em>Definition</em> can be used nearly interchangeably, because they do refer to the same thing: finiteness. But the two words express different attitudes about finiteness. <em>Delimitation</em> speaks of necessity - what you <em>cannot</em> be, do, or have - while <em>Definition</em> speaks of possibility, of internal or localized freedom - what you <em>can</em> be, do, or have.</p>
+  <p>Your finiteness has both of these qualities, and they correspond to two modes of being: objectness and subjectness.</p>
+  BODY
+  ).save
+Post.new(
   title: 'The Cost of Perfect Memory',
   body: <<-BODY
-  <p>Memory fails. But it fails most in capturing the ordinary. And...</p>
+  <p>Jerome A. Miller, in <em>The Way of Suffering: A Geography of Crisis</em>
+      (pp. 8-9.), reminds us that memory fails. But it fails most in capturing the ordinary. And...</p>
   <blockquote>"Were memory submissive to that rebuke, I would memorize everything—which tie I wear each day, the food eaten at every meal, the products on every shopping list, the whole cluttered stream of everyday life. It is difficult but not
       impossible to imagine a person so completely immersed in and fettered by the brute data of daily existence. If a person were thus immersed, could we say in his behalf that he is obedient to the concrete reality of life? That he refuses to flee from
       the mundane but completely accepts it in its finitude and facticity? Indeed, no other mode of existence seems, at first glance, so perfectly submissive to the given and so immune to the appeals of illusion and fantasy.
@@ -141,8 +52,5 @@ Post.new(
           schedule—such, indeed, is peace, but it is the peacefulness of a will which has first willed violence. If I go so far as to memorize every detail of the ordinary, if those details are nothing but data which get their meaning from my projects, if
           those projects originate in my plan for how I want my life to go, my fundamental purpose is to prevent the occurrence of anything out of the ordinary or upsetting."</p>
   </blockquote>
-  <p class="right-aligned">— Jerome A. Miller, from
-      <em>The Way of Suffering: A Geography of Crisis,</em>
-      pp. 8-9.</p>
   BODY
 ).save

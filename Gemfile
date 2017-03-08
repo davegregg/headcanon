@@ -21,8 +21,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# gem 'sanitize', github: 'rgrove/sanitize'
-
 # We want serializers, killer.
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
