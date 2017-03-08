@@ -7,7 +7,7 @@
       <% end %>
         <div>
           <h3><%= post.title %></h3>
-          <%= CGI.unescapeHTML(post.body).truncate_words(100).html_safe %>
+          <%= CGI.unescapeHTML(post.body).truncate_words(85).html_safe %>
           <hr />
         </div>
       <% if col_count == 2 %>
