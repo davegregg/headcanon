@@ -1,0 +1,15 @@
+.navbar {
+    width: 100%;
+    margin-bottom: 0;
+    // position: absolute;
+    position: fixed;
+}
+
+.navbar-brand {
+    width: 50px;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+}

@@ -23,6 +23,10 @@ gem 'coffee-rails', '~> 4.2'
 
 # We want serializers, killer.
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -42,6 +46,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
+  # gem 'factory_girl_rails'
+  gem 'ffaker'
   gem 'pry-rails'
   gem 'pry-nav'
 end

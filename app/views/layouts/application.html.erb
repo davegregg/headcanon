@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= @page_title %></title>
+        <title>
+          <%= @title %>
+        </title>
         <%= csrf_meta_tags %>
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
     <body>
-        <header>
-            <div id="banner"></div>
-            <img id="spacer" src="/assets/spacer-931cf0c68d44cc207ba1a9ff5e092cc1635494780269786b6bf5944e7f49ad05.gif" />
-            <h1><%= @page_title %></h1>
-        </header>
-            <%= yield %>
-        <footer>
-            Copyright &copy; 2017
-        </footer>
+        <%= render partial: "nav" %>
+        <%= render partial: "header" %>
+        <%= render partial: "main" %>
+        <%= render partial: "footer" %>
     </body>
 </html>

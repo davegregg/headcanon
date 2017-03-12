@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    render json {Post.all}
+    # render json {Post.all}
   end
 
   def create
@@ -29,7 +29,8 @@ class PostsController < ApplicationController
     params[:slug] ||= params[:title].truncate_words(7, separator:' ', omission:'_')
                                     .parameterize
                                     .downcase
-    params[:body] = params[:body].gsub(';','--')
+    #TODO figure out what actually is coughing at the semicolons and fix properly
+    params[:body] = params[:body].gsub(';', '—')
     params.permit(:title,
                   :body,
                   :slug)
