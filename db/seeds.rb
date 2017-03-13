@@ -7,7 +7,7 @@
 Post.new(
   title: 'Existentialism\'s Two Moments: Deconstruction & Construction',
   summary: <<-HTML,
-    [S]truggle against absurdity is itself intrinsically valuable because it endows life with dignity and purpose.
+    Struggle against absurdity is itself intrinsically valuable because it endows life with dignity and purpose.
   HTML
   body: <<-HTML,
       <p>Existentialism's deconstruction is well-known, rising even into pop culture. But Existentialism's constructive messages remain largely ignored. Michelman, in <em>The A to Z of Existentialism,</em> gives us a foothold to get started:<p>
@@ -87,17 +87,18 @@ Post.new(
     It was but a fancy, a horrible dream-shape that fearsome to the merry tables strode...
   HTML
   body: <<-HTML,
-    <blockquote><p>In ancient times an iron Fate lorded it, with dumb force, over the widespread families of men. A gloomy oppression swathed their anxious souls: the earth was boundless, the abode of the gods and their home. From eternal ages stood its mysterious structure. Beyond the red hills of the morning, in the sacred bosom of the sea, dwelt the sun, the all-enkindling, live luminary. An aged giant upbore the happy world. Prisoned beneath mountains lay the first-born sons of mother Earth, helpless in their destroying fury against the new, glorious race of gods, and their kindred, glad-hearted men. Ocean's dusky, green abyss was the lap of a goddess. In the crystal grottos revelled a wanton folk. Rivers, trees, flowers, and beasts had human wits. Sweeter tasted the wine, poured out by Youth impersonated; a god was in the grape-clusters; a loving, motherly goddess upgrew in the full golden sheaves; love's sacred carousal was a sweet worship of the fairest of the goddesses. Life revelled through the centuries like one spring-time, an ever-variegated festival of the children of and the dewllers on the earth. All races childlike adored the ethereal, thousand-fold flame as the one sublimest thing in the world.</p>
-    <p>It was but a fancy, a horrible dream-shape—</p>
-    <blockquote class="blockquote-reverse">That fearsome to the merry tables strode,<br>
-      And wrapt the spirit in wild consternation.<br>
-      The gods themselves here counsel knew nor showed<br>
-      To fill the stifling heart with consolation.<br>
-      Mysterious was the monster's pathless road,<br>
-      Whose rage would heed no prayer and no oblation;<br>
-      'Twas Death who broke the banquet up with fears,<br>
-      With anguish, with dire pain, and bitter tears.
-  </blockquote>
+    <p>Novalis, in <em>Hymns to the Night,</em> translation by George MacDonald:</p>
+      <blockquote><p>In ancient times an iron Fate lorded it, with dumb force, over the widespread families of men. A gloomy oppression swathed their anxious souls: the earth was boundless, the abode of the gods and their home. From eternal ages stood its mysterious structure. Beyond the red hills of the morning, in the sacred bosom of the sea, dwelt the sun, the all-enkindling, live luminary. An aged giant upbore the happy world. Prisoned beneath mountains lay the first-born sons of mother Earth, helpless in their destroying fury against the new, glorious race of gods, and their kindred, glad-hearted men. Ocean's dusky, green abyss was the lap of a goddess. In the crystal grottos revelled a wanton folk. Rivers, trees, flowers, and beasts had human wits. Sweeter tasted the wine, poured out by Youth impersonated; a god was in the grape-clusters; a loving, motherly goddess upgrew in the full golden sheaves; love's sacred carousal was a sweet worship of the fairest of the goddesses. Life revelled through the centuries like one spring-time, an ever-variegated festival of the children of and the dewllers on the earth. All races childlike adored the ethereal, thousand-fold flame as the one sublimest thing in the world.</p>
+      <p>It was but a fancy, a horrible dream-shape—</p>
+      <blockquote class="blockquote-reverse">That fearsome to the merry tables strode,<br>
+        And wrapt the spirit in wild consternation.<br>
+        The gods themselves here counsel knew nor showed<br>
+        To fill the stifling heart with consolation.<br>
+        Mysterious was the monster's pathless road,<br>
+        Whose rage would heed no prayer and no oblation;<br>
+        'Twas Death who broke the banquet up with fears,<br>
+        With anguish, with dire pain, and bitter tears.
+    </blockquote>
   HTML
   views: 167
 ).save

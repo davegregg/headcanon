@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   before_action ->{
     @title = 'Everything is headcanon.'
+    @accent_colors = %w(kalamata-olive-juice-on-a-paper-plate
+                        subtly-pretentious-khaki-shorts
+                        drowning-in-a-pre-raphaelite-sea
+                        a-gentle-wednesday-poo)
   }
 
   private
