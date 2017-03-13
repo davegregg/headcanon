@@ -1,0 +1,6 @@
+<header class="h3">
+    <%= render text: sanitize(@post.title) %>
+</header>
+<article>
+    <%= render html: sanitize(@post.body) %>
+</article>

@@ -1,8 +1,2 @@
-<% post = Post.order(created_at: :desc)
-              .first %>
-<header class="h3">
-    <%= render text: sanitize(post.title) %>
-</header>
-<article>
-    <%= render html: sanitize(post.body) %>
-</article>
+<%= render template: 'posts/show' %>
+<!-- TODO: flesh out with multiple posts -->

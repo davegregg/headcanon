@@ -1,13 +1,22 @@
 class PostsController < ApplicationController
 
   def index
-    # render json {Post.all}
+    @post = Post.order(created_at: :desc)
+                .first
+  end
+
+  def show
+    @post = Post.friendly.find(request_args[:id])
   end
 
   def create
-    # TODO: sanitize 'summary', with stylistic tags only
-    post = Post.new(title: request_args[:title],
-                    body:  CGI.escapeHTML(request_args[:body]),
+    params[:slug] ||= params[:title].parameterize
+                                    .downcase[0...255]
+    # TODO: sanitize 'summary', with stylistic HTML tags only
+    white_list_sanitizer = Rails::Html::WhiteListSanitizer.new
+    post = Post.new(summary: request_args[:title],
+                    title: request_args[:title],
+                    body:  white_list_sanitizer.sanitize(request_args[:body]),
                     slug:  request_args[:slug])
     post.save ? render(json: post) : render(error_up(post))
   end
@@ -26,15 +35,10 @@ class PostsController < ApplicationController
   private
 
   def request_args
-    #TODO strip special chars from slug
-    params[:slug] ||= params[:title].truncate_words(7, separator:' ', omission:'_')
-                                    .parameterize
-                                    .downcase
-    #TODO figure out what actually is coughing at the semicolons and fix properly
-    params[:body] = params[:body].gsub(';', '—')
-    params.permit(:title,
-                  :body,
-                  :slug)
+    params.permit(:id,
+                  :slug,
+                  :title,
+                  :body)
   end
 
 end

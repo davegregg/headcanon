@@ -2,9 +2,8 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
-
-## add views to the posts, add more posts to test views func
 Post.new(
+  slug: 'existentialisms-two-moments-deconstruction-construction',
   title: 'Existentialism\'s Two Moments: Deconstruction & Construction',
   summary: <<-HTML,
     Struggle against absurdity is itself intrinsically valuable because it endows life with dignity and purpose.
@@ -18,6 +17,7 @@ Post.new(
   views: 347
 ).save
 Post.new(
+  slug: 'stoicism-existential-therapy',
   title: 'Stoicism in Existential Therapy',
   summary: <<-HTML,
     When the Greeks faced the same predicament, <strong>they went Stoic.</strong>
@@ -29,6 +29,7 @@ Post.new(
   views: 132
 ).save
 Post.new(
+  slug: 'necessity-and-possibility',
   title: 'Necessity and Possibility',
   summary: <<-HTML,
     <em>Delimitation</em> speaks of necessity... while <em>Definition</em> speaks of possibility, of internal or localized freedom....
@@ -40,6 +41,7 @@ Post.new(
   views: 67
 ).save
 Post.new(
+  slug: 'the-cost-of-perfect-memory',
   title: 'The Cost of Perfect Memory',
   summary: <<-HTML,
     That I experience an accident as interference, and my own anxiety as a disruption of the even keel of repose, indicates that I already have a blueprint I intend to impose on the course of events.
@@ -68,6 +70,7 @@ Post.new(
   views: 422
 ).save
 Post.new(
+  slug: 'the-crowd-is-untruth',
   title: 'The Crowd Is Untruth',
   summary: <<-HTML,
     There is... no one who has more contempt for what it is to be a human being than those who make it their profession to lead the crowd.
@@ -81,7 +84,8 @@ Post.new(
   HTML
   views: 967
 ).save
-Post.new(
+testing_autoslug = Post.new(
+  # slug: 'when-death-spoiled-the-banquet-of-the-gods',
   title: 'When Death Spoiled the Banquet of the Gods',
   summary: <<-HTML,
     It was but a fancy, a horrible dream-shape that fearsome to the merry tables strode...
@@ -101,4 +105,7 @@ Post.new(
     </blockquote>
   HTML
   views: 167
-).save
+)
+testing_autoslug[:slug] ||= testing_autoslug[:title].parameterize
+                                                    .downcase[0...255]
+testing_autoslug.save

@@ -24,7 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 # We want serializers, killer.
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'friendly_id', '~> 5.1.0'
+gem 'rails-html-sanitizer'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 

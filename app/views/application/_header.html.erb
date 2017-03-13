@@ -1,5 +1,9 @@
 <header id="site-header">
     <img id="banner" src="/assets/banner.jpg" />
-    <h1><%= @title %></h1>
+    <h1>
+      <%= link_to root_path do #TODO: get z-indexing wrt the text-shadow here corrected
+            @title
+          end %>
+    </h1>
     <img id="banner-spacer" src="/assets/transparent_spacer.gif" />
 </header>

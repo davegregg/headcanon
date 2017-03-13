@@ -17,6 +17,10 @@
             -moz-background-size: cover;
             background-size: cover;
         }
+
+        a:hover {
+            text-decoration: none;
+        }
     }
 
     .row {

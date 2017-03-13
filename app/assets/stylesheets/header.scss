@@ -1,21 +1,33 @@
-#site-header #banner {
-    z-index: -100;
-    position: fixed;
-    width: 100%;
-    left: 0;
-}
+#site-header {
+    #banner {
+        z-index: -100;
+        position: fixed;
+        width: 100%;
+        left: 0;
+    }
 
-#site-header #banner-spacer {
-    visibility: hidden;
-}
+    #banner-spacer {
+        z-index: -50;
+        visibility: hidden;
+    }
 
-#site-header h1 {
-    z-index: -50;
-    position: fixed;
-    width: 100%;
-    margin-top: 15vw;
-    color: #fff;
-    font-size: 6vh;
-    text-align: center;
-    text-shadow: 0 0 0.5em black;
+    h1 {
+        z-index: -1;
+        position: fixed;
+        // position: absolute;
+        width: 100%;
+        margin-top: 15vw;
+        color: white;
+        font-size: 6vh;
+        text-align: center;
+        text-shadow: 0 0 0.5em black;
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
 }

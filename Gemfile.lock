@@ -72,6 +72,8 @@ GEM
     execjs (2.7.0)
     ffaker (2.5.0)
     ffi (1.9.18)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
@@ -203,6 +205,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   ffaker
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
@@ -213,6 +216,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.2)
+  rails-html-sanitizer
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
