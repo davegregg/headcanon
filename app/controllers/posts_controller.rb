@@ -13,10 +13,9 @@ class PostsController < ApplicationController
     params[:slug] ||= params[:title].parameterize
                                     .downcase[0...255]
     # TODO: sanitize 'summary', with stylistic HTML tags only
-    white_list_sanitizer = Rails::Html::WhiteListSanitizer.new
-    post = Post.new(summary: request_args[:title],
+    post = Post.new(summary: scrub_html(restrictively: request_args[:summary]),
                     title: request_args[:title],
-                    body:  white_list_sanitizer.sanitize(request_args[:body]),
+                    body:  scrub_html(permissively: request_args[:body]),
                     slug:  request_args[:slug])
     post.save ? render(json: post) : render(error_up(post))
   end

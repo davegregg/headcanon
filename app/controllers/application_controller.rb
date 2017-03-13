@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def scrub_html(options)
+  def scrub_html(how_and_what = {})
     restrictive = %w(i b a p q u s br em rt strong mark
                   del ins address cite bdo bdi sub sup
                   small h4 h5 h6 span progress wbr dfn
@@ -24,15 +24,17 @@ class ApplicationController < ActionController::Base
                   source audio track iframe map area samp
                   noscript)
     filter = Rails::Html::PermitScrubber.new
-    filter.tags = case options.keys.first
+    how = how_and_what.keys.first
+    filter.tags = case how
     when :permissively
       permissive
     when :restrictively
       restrictive
     else
-      return 'Invalid symbol. Pass :permissively or :restrictively as keys with an HTML string as its value.'
+      raise 'Invalid symbol. Pass :permissively or :restrictively as keys with an HTML string as its value.'
     end
-    html.scrub(filter).to_s
+    what = how_and_what[how]
+    what.scrub!(filter).to_s
   end
 
   def error_up(class_instance)
