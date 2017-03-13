@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    # TODO: sanitize 'summary', with stylistic tags only
     post = Post.new(title: request_args[:title],
                     body:  CGI.escapeHTML(request_args[:body]),
                     slug:  request_args[:slug])

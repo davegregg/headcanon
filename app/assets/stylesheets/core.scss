@@ -1,0 +1,9 @@
+@import "posts";
+@import "sidebar";
+@import "popular";
+
+#site-core {
+    z-index: 1;
+    background-color: white;
+    padding-top: 4vh;
+}

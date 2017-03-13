@@ -1,0 +1,10 @@
+<footer id="popular" class="column center-block">
+  <h1>MOST POPULAR</h1>
+  <div class="row center-block">
+    <% Post.order(views: :desc)[0...4].each do |post| %>
+      <div class="popular col-lg-3">
+        <%= render html: sanitize(post.summary) %>
+      </div>
+    <% end %>
+  </div>
+</footer>
