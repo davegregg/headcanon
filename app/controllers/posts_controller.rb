@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.friendly.find(request_args[:id])
+    @post = Post.friendly.find(params[:id])
+  end
+
+  def edit
+    @post = Post.friendly.find(params[:id])
   end
 
   def new
@@ -15,19 +19,19 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(summary: scrub_html(restrictively: auto_summary),
-                    title: request_args[:title],
-                    body:  scrub_html(permissively: request_args[:body]),
+                    title: params[:post][:title],
+                    body:  scrub_html(permissively: params[:post][:body]),
                     slug:  auto_slug,
-                    user:  User.find(request_args[:user_id]))
+                    user:  User.find(params[:post][:user_id]))
     # post.save ? render(json: post) : render(error_up(post))
     post.save ? redirect_to("/posts/#{post.slug}") : render(error_up(post))
   end
 
   def update
-    post = Post.find_by(slug: request_args[:slug])
-    if post.update(title: request_args[:title],
-                   body:  request_args[:body],
-                   slug:  request_args[:slug])
+    post = Post.find_by(slug: params[:post][:slug])
+    if post.update(title: params[:post][:title],
+                   body:  params[:post][:body],
+                   slug:  params[:post][:slug])
       render(json: post)
     else
       render(error_up(post))
@@ -36,25 +40,24 @@ class PostsController < ApplicationController
 
   private
 
-  def request_args
-    # .require(:post)
-    params.permit(:id,
-                  :slug,
-                  :title,
-                  :body,
-                  :summary,
-                  :user_id)
+  def sanitized_args
+    params.require(:post).permit(:id,
+                         :slug,
+                         :title,
+                         :body,
+                         :summary,
+                         :user_id)
   end
 
   def auto_summary
-    generated_summary = -> { request_args[:body][0...255] }
-    request_args[:summary].blank? ? generated_summary.call : request_args[:summary]
+    generated_summary = -> { params[:post][:body][0...255] }
+    params[:post][:summary].blank? ? generated_summary.call : params[:post][:summary]
   end
 
   def auto_slug
-    generated_slug = -> { request_args[:title].parameterize
+    generated_slug = -> { params[:post][:title].parameterize
                                               .downcase[0...255] }
-    request_args[:slug].blank? ? generated_slug.call : request_args[:slug]
+    params[:post][:slug].blank? ? generated_slug.call : params[:post][:slug]
   end
 
 end
