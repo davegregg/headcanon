@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  # TODO add users and authentication
-  # protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
 
   before_action ->{
     @title = 'Everything is headcanon.'
@@ -17,12 +16,11 @@ class ApplicationController < ActionController::Base
                   del ins address cite bdo bdi sub sup
                   small h4 h5 h6 span progress wbr dfn
                   meter time abbr var kbd)
-    permissive =  restrictive +
-                  %w(blockquote pre code h1 h2 h3 img ul
-                  ol li dl dt dd hr figure figcaption svg
-                  summary details menuitem canvas video
-                  source audio track iframe map area samp
-                  noscript)
+    permissive =  restrictive + %w(blockquote pre code h1
+                  h2 h3 img ul ol li dl dt dd hr figure
+                  figcaption svg summary details menuitem
+                  canvas video source audio track iframe
+                  map area samp noscript)
     filter = Rails::Html::PermitScrubber.new
     how = how_and_what.keys.first
     filter.tags = case how
@@ -31,10 +29,10 @@ class ApplicationController < ActionController::Base
     when :restrictively
       restrictive
     else
-      raise 'Invalid symbol. Pass :permissively or :restrictively as keys with an HTML string as its value.'
+      raise 'Invalid option. Pass :permissively or :restrictively as a key with an HTML string value.'
     end
-    what = how_and_what[how]
-    what.scrub!(filter).to_s
+    what = Loofah.fragment(how_and_what[how])
+    what.scrub!(filter)
   end
 
   def error_up(class_instance)

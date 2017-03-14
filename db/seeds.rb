@@ -2,7 +2,23 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
-Post.new(
+5.times do
+  User.create!(
+    email: FFaker::Internet.email,
+    name: FFaker::Name.html_safe_name,
+    password: FFaker::Internet.password,
+    avatar: FFaker::Avatar.image
+  )
+end
+
+fake_user = User.create!(
+  email: FFaker::Internet.email,
+  name: FFaker::Name.html_safe_name,
+  password: FFaker::Internet.password,
+  avatar: FFaker::Avatar.image
+)
+
+fake_user.posts.create!(
   slug: 'existentialisms-two-moments-deconstruction-construction',
   title: 'Existentialism\'s Two Moments: Deconstruction & Construction',
   summary: <<-HTML,
@@ -14,9 +30,10 @@ Post.new(
           "What Meursault knows [in 'The Stranger'] is that life is absurd. The problem, which Camus attempted to address in subsequent works like 'The Rebel,' is that, if life is absurd, then it would appear that 'all is permitted': 'If one believes in nothing, if nothing makes sense, if we can assert no value whatsoever, everything is permissible and nothing is important' ('The Rebel', 13). This problem was seized on by critics like Gabriel Marcel, who criticized Camus's conception of the absurd as '...a Narcissism of nothingness' (HV, 211-212). An avenue of response was suggested by Camus's contention that struggle against absurdity is itself intrinsically valuable because it endows life with dignity and purpose. If this is the case, then the philosophy of the absurd can at least defeat the charge of nihilism, the view that there are no intrinsic values. Indeed, Sisyphus and Meursault are not nihilists, in that they cling to the happiness of earthly existene as an ultimate good. The more difficult question is how the absurdist position overcomes moral relativism--the view that 'everything is permissible,' even, for example, killing another person. In writings subsequent to 'The Stranger,' such as 'The Plague' (1947) and 'The Rebel' (1951), Camus acknowledged the limits of the absurdist position. He reframed his philosophy of the absurd in terms of a philosophy of 'rebellion' that recognized courage, freedom, dignity, compassion, and solidarity with others as universal human values."
       </blockquote>
   HTML
-  views: 347
-).save
-Post.new(
+  views: 347,
+  created_at: rand(1..365).days.ago
+)
+fake_user.posts.create!(
   slug: 'stoicism-existential-therapy',
   title: 'Stoicism in Existential Therapy',
   summary: <<-HTML,
@@ -26,9 +43,10 @@ Post.new(
     <p>The term <em>existential crisis</em> can be described as the tragic loss of symbolic meaning. This isn't a new phenomenon, but our strategies have shifted. John E. Obrien make an interesting note:</p>
     <blockquote>"When the Greeks faced the same predicament, <strong>they went Stoic.</strong>"</blockquote>
   HTML
-  views: 132
-).save
-Post.new(
+  views: 132,
+  created_at: rand(1..365).days.ago
+)
+fake_user.posts.create!(
   slug: 'necessity-and-possibility',
   title: 'Necessity and Possibility',
   summary: <<-HTML,
@@ -38,9 +56,10 @@ Post.new(
     <p><em>Delimitation</em> and <em>Definition</em> can be used nearly interchangeably, because they do refer to the same thing: finiteness. But the two words express different attitudes about finiteness. <em>Delimitation</em> speaks of necessity—what you <em>cannot</em> be, do, or have—while <em>Definition</em> speaks of possibility, of internal or localized freedom—what you <em>can</em> be, do, or have.</p>
     <p>Your finiteness has both of these qualities, and they correspond to two modes of being: objectness and subjectness.</p>
   HTML
-  views: 67
-).save
-Post.new(
+  views: 67,
+  created_at: rand(1..365).days.ago
+)
+fake_user.posts.create!(
   slug: 'the-cost-of-perfect-memory',
   title: 'The Cost of Perfect Memory',
   summary: <<-HTML,
@@ -67,9 +86,10 @@ Post.new(
       those projects originate in my plan for how I want my life to go, my fundamental purpose is to prevent the occurrence of anything out of the ordinary or upsetting."</p>
     </blockquote>
   HTML
-  views: 422
-).save
-Post.new(
+  views: 422,
+  created_at: rand(1..365).days.ago
+)
+fake_user.posts.create!(
   slug: 'the-crowd-is-untruth',
   title: 'The Crowd Is Untruth',
   summary: <<-HTML,
@@ -82,8 +102,10 @@ Post.new(
       <p>The crowd is untruth. There is therefore no one who has more contempt for what it is to be a human being than those who make it their profession to lead the crowd. Let someone, some individual human being, certainly, approach such a person, what does he care about him; that is much too small a thing; he proudly sends him away; there must be at least a hundred. And if there are thousands, then he bends before the crowd, he bows and scrapes; what untruth! No, when there is an individual human being, then one should express the truth by respecting what it is to be a human being; and if perhaps, as one cruelly says, it was a poor, needy human being, then especially should one invite him into the best room, and if one has several voices, he should use the kindest and friendliest; that is the truth. When on the other hand it was an assembly of thousands or more, and "the truth" became the object of balloting, then especially one should godfearingly—if one prefers not to repeat in silence the <em>Our Father: deliver us from evil</em>—one should godfearingly express, that a crowd, as the court of last resort, ethically and religiously, is the untruth, whereas it is eternally true, that everyone can be the <em>one.</em> This is the truth.</p>
     </blockquote>
   HTML
-  views: 967
-).save
+  views: 967,
+  created_at: rand(1..365).days.ago
+)
+
 testing_autoslug = Post.new(
   # slug: 'when-death-spoiled-the-banquet-of-the-gods',
   title: 'When Death Spoiled the Banquet of the Gods',
@@ -104,8 +126,10 @@ testing_autoslug = Post.new(
         With anguish, with dire pain, and bitter tears.
     </blockquote>
   HTML
-  views: 167
+  views: 167,
+  created_at: rand(1..365).days.ago
 )
 testing_autoslug[:slug] ||= testing_autoslug[:title].parameterize
                                                     .downcase[0...255]
-testing_autoslug.save
+fake_user.posts << testing_autoslug
+fake_user.save

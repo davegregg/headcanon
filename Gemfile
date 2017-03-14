@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'friendly_id', '~> 5.1.0'
+gem 'loofah'
 gem 'rails-html-sanitizer'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
@@ -38,7 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

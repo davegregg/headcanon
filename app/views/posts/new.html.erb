@@ -1,0 +1,23 @@
+<%= form_for @post do |new_post| %>
+
+  <div>
+    <%= new_post.label :title %>
+    <%= new_post.text_area :title %>
+  </div>
+  <div>
+    <%= new_post.label :summary %>
+    <%= new_post.text_area :summary %>
+  </div>
+  <div>
+    <%= new_post.label :body %>
+    <%= new_post.text_area :body %>
+  </div>
+  <div>
+    <%= new_post.label :user_id %>
+    <%= new_post.select :user_id, User.all.map{ |user| [user.email, user.id] } %>
+  </div>
+  <div>
+    <%= new_post.submit class: "btn btn-primary" %>
+  </div>
+
+<% end %>
