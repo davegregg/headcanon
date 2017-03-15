@@ -21,11 +21,11 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# We want serializers, killer.
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'friendly_id', '~> 5.1.0'
 gem 'loofah'
 gem 'rails-html-sanitizer'
+gem 'sendgrid-ruby'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
