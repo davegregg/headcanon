@@ -45,6 +45,15 @@
           </div>
       </div>
       <div class="row">
+          <div class="col-lg-1 col-lg-offset-1">
+              <%= post.label :featured_image %>
+          </div>
+          <div class="col-lg-5">
+              <%= post.text_field :featured_image, class: "form-control" %> or
+              <%= post.file_field :featured_image, class: "form-control" %>
+          </div>
+      </div>
+      <div class="row">
           <div class="col-lg-3 col-lg-offset-2">
               <%= post.submit class: "btn btn-primary" %>
           </div>

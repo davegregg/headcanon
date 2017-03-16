@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @post = Post.order(created_at: :desc)
-                .first
+    @posts = Post.all
   end
 
   def show
@@ -22,7 +21,8 @@ class PostsController < ApplicationController
                     title: params[:post][:title],
                     body:  scrub_html(permissively: params[:post][:body]),
                     slug:  auto_slug,
-                    user:  User.find(params[:post][:user_id]))
+                    user:  User.find(params[:post][:user_id]),
+                    featured_image: params[:post][:featured_image])
     # post.save ? render(json: post) : render(error_up(post))
     post.save ? redirect_to("/posts/#{post.slug}") : render(error_up(post))
   end
@@ -42,11 +42,12 @@ class PostsController < ApplicationController
 
   def sanitized_args
     params.require(:post).permit(:id,
-                         :slug,
-                         :title,
-                         :body,
-                         :summary,
-                         :user_id)
+                                 :slug,
+                                 :title,
+                                 :body,
+                                 :summary,
+                                 :user_id,
+                                 :featured_image)
   end
 
   def auto_summary
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
 
   def auto_slug
     generated_slug = -> { params[:post][:title].parameterize
-                                              .downcase[0...255] }
+                                               .downcase[0...255] }
     params[:post][:slug].blank? ? generated_slug.call : params[:post][:slug]
   end
 

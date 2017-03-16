@@ -22,10 +22,18 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+
 gem 'friendly_id', '~> 5.1.0'
+
+# html input handling
 gem 'loofah'
 gem 'rails-html-sanitizer'
-gem 'sendgrid-ruby'
+
+gem 'simple_form'
+
+gem 'figaro'
+gem 'carrierwave'
+gem 'cloudinary'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
