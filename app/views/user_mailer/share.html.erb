@@ -1,0 +1,9 @@
+<!-- ???????? -->
+
+<h3>A post has been shared with you!</h3>
+
+<h4>Posted by <%= @post.user.name %></h4>
+
+<%= simple_format @post.body %>
+
+<%= link_to "Read more", post_url(@post) %>

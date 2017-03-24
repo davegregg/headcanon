@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   ## ignore any periods not followed by `json` and the EOS
   # permit_periods_in = lambda do |*vars|
   #   match = /[^\/]+(?=\.json\z)|[^\/]+/
@@ -10,7 +11,11 @@ Rails.application.routes.draw do
   ## resources :users, **permit_periods_in.(:email)
 
   resources :users
-  resources :posts
+  resources :posts do
+    member do
+      post 'share'
+    end
+  end
 
   root 'posts#index'
 

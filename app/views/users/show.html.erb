@@ -1,1 +1,35 @@
-<%= render text: @user.inspect %>
+<div class="row">
+  <div class="col-lg-9 col-lg-offset-3">
+    <h1><%= @user.name %></h1>
+    <%= image_tag @user.avatar, class: 'image-responsive pull-right' %>
+  </div>
+</div>
+
+<% @user.posts.each do |post| %>
+
+  <header class="h3">
+    <%= link_to post do %>
+      <%= render text: sanitize(post.title) %>
+    <% end %>
+  </header>
+  <% if post.featured_image? %>
+    <div class="media-right photo">
+      <%= link_to post.featured_image.versions[:standard].url do
+        image_tag post.featured_image.versions[:thumbnail].url,
+                  class: "img-responsive",
+                  alt: post.summary
+      end %>
+    </div>
+  <% else %>
+    <div class="media-right">
+      <p>
+        Sorry, no photo here, bub.
+      </p>
+    </div>
+  <% end %>
+  <article>
+      <%= render html: sanitize(post.body) %>
+  </article>
+  <br /><br />
+
+<% end %>

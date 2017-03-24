@@ -1,7 +1,9 @@
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>
 
   <header class="h3">
+    <%= link_to post do %>
       <%= render text: sanitize(post.title) %>
+    <% end %>
   </header>
   <% if post.featured_image? %>
     <div class="media-right photo">

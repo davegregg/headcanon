@@ -1,5 +1,6 @@
 <header class="h3">
-    <%= render text: sanitize(@post.title) %>
+    <%= simple_format render text: sanitize(@post.title) %>
+    <small>by <%= link_to @post.user.name, @post.user %></small>
 </header>
 <article>
     <% if !@post[:featured_image].blank? %>
@@ -15,5 +16,6 @@
         <% end %>
     </div>
     <% end %>
+
     <%= render html: sanitize(@post.body) %>
 </article>

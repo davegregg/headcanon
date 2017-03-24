@@ -10,44 +10,52 @@
   </div>
 <% end %>
 
-<%= form_for @user do |user| %>
+<%= simple_form_for @user do |f| %>
+  <%= f.input  :email %>
+  <%= f.input  :name %>
+  <%= f.input  :avatar %>
+  <%= f.input  :banner %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+<!-- <%#= form_for @user do |user| %>
   <div class="container">
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= user.label :name %>
+              <%#= user.label :name %>
           </div>
           <div class="col-lg-3">
-              <%= user.text_field :name, class: "form-control" %>
+              <%#= user.text_field :name, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= user.label :email %>
+              <%#= user.label :email %>
           </div>
           <div class="col-lg-5">
-              <%= user.text_field :email, class: "form-control" %>
+              <%#= user.text_field :email, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= user.label :avatar %>
+              <%#= user.label :avatar %>
           </div>
           <div class="col-lg-5">
-              <%= user.url_field :avatar, class: "form-control" %>
+              <%#= user.url_field :avatar, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= user.label :banner %>
+              <%#= user.label :banner %>
           </div>
           <div class="col-lg-5">
-              <%= user.url_field :banner, class: "form-control" %>
+              <%#= user.url_field :banner, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-3 col-lg-offset-2">
-              <%= user.submit class: "btn btn-primary" %>
+              <%#= user.submit class: "btn btn-primary" %>
           </div>
       </div>
   </div>
-<% end %>
+<%# end %> -->

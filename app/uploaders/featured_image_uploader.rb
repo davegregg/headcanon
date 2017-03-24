@@ -1,6 +1,5 @@
 class FeaturedImageUploader < CarrierWave::Uploader::Base
-  # Invite Cloudinary over to play.
-  include Cloudinary::CarrierWave
+  include Cloudinary::CarrierWave # Invite Cloudinary over to play.
 
   process convert: 'png'
   process tags: ['featured_image']
