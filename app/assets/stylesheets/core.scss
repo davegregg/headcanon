@@ -2,6 +2,8 @@
 @import "sidebar";
 @import "popular";
 
+body { padding-top: 50px; }
+
 #site-core {
     z-index: 5;
     background-color: white;

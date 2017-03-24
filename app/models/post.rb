@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   validates   :body,  presence: true
   validates   :user,  presence:  true
 
+  mount_uploader :featured_image, FeaturedImageUploader
+
   default_scope { order(created_at: :desc) }
 
   extend FriendlyId

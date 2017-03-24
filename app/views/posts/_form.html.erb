@@ -10,44 +10,64 @@
   </div>
 <% end %>
 
-<%= form_for @post do |post| %>
+<%= simple_form_for @post do |f| %>
+  <%= f.association  :user, as: :select %>
+  <%= f.input  :title %>
+  <%= f.input  :summary, as: :text %>
+  <%= f.input  :body, as: :text %>
+  <%= f.input  :remote_featured_image_url, label: 'Featured Image', wrapper_html: { class: "featimage-remote" } %>
+  &nbsp;&nbsp;or&nbsp;&nbsp;<%= f.input  :featured, as: :file, label: false, wrapper_html: { class: "featimage-upload" } %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+<!--
+<%#= form_for @post do |post| %>
   <div class="container">
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= post.label :user_id %>
+              <%#= post.label :user_id %>
           </div>
           <div class="col-lg-3">
-              <%= post.select :user_id, User.all.map{ |user| [user.email, user.id] }, {}, class: 'form-control' %>
+              <%#= post.select :user_id, User.all.map{ |user| [user.email, user.id] }, {}, class: 'form-control' %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= post.label :title %>
+              <%#= post.label :title %>
           </div>
           <div class="col-lg-3">
-              <%= post.text_field :title, class: "form-control" %>
+              <%#= post.text_field :title, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= post.label :summary %>
+              <%#= post.label :summary %>
           </div>
           <div class="col-lg-5">
-              <%= post.text_area :summary, class: "form-control" %>
+              <%#= post.text_area :summary, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-1 col-lg-offset-1">
-              <%= post.label :body %>
+              <%#= post.label :body %>
           </div>
           <div class="col-lg-5">
-              <%= post.text_area :body, class: "form-control" %>
+              <%#= post.text_area :body, class: "form-control" %>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-1 col-lg-offset-1">
+              <%#= post.label :featured_image %>
+          </div>
+          <div class="col-lg-5">
+              <%#= post.file_field :featured_image, class: "form-control" %> or
+              <%#= post.text_field :remote_featured_image_url, class: "form-control" %>
           </div>
       </div>
       <div class="row">
           <div class="col-lg-3 col-lg-offset-2">
-              <%= post.submit class: "btn btn-primary" %>
+              <%#= post.submit class: "btn btn-primary" %>
           </div>
       </div>
   </div>
-<% end %>
+<%# end %> -->
